@@ -1,0 +1,31 @@
+name: 毎日AIニュースをSlackに投稿
+
+on:
+  schedule:
+    # 毎日 12:00 JST = 03:00 UTC
+    - cron: "0 3 * * *"
+  workflow_dispatch:  # 手動実行ボタンも有効化
+
+jobs:
+  post-ai-news:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: リポジトリをチェックアウト
+        uses: actions/checkout@v4
+
+      - name: Python 3.11 をセットアップ
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: "pip"
+
+      - name: 依存ライブラリをインストール
+        run: pip install feedparser requests
+
+      - name: AIニュース収集 → Slack投稿
+        env:
+          SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
+          SLACK_CHANNEL_ID: ${{ secrets.SLACK_CHANNEL_ID }}
+        run: python github_actions_post.py
