@@ -2,8 +2,8 @@ name: 毎日AIニュースをSlackに投稿
 
 on:
   schedule:
-    # 毎日 12:00 JST = 03:00 UTC
-    - cron: "0 3 * * *"
+    # 毎日 10:00 JST = 01:00 UTC
+    - cron: "0 1 * * *"
   workflow_dispatch:  # 手動実行ボタンも有効化
 
 jobs:
