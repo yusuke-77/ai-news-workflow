@@ -12,6 +12,7 @@ RSS_FEEDS = [
     ("ASCII.jp",          "https://ascii.jp/rss.xml"),
     ("Gigazine",          "https://gigazine.net/news/rss_2.0/"),
     ("CNET Japan",        "https://japan.cnet.com/news/rss.htm"),
+    ("XenoSpectrum",      "https://xenospectrum.com/feed/"),
 ]
 
 _TAG_RE = re.compile(r"<[^>]+>")

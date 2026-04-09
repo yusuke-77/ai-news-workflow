@@ -23,6 +23,7 @@ RSS_FEEDS = [
     ("CNET Japan",       "https://japan.cnet.com/news/rss.htm"),
     ("ITmedia News",     "https://rss.itmedia.co.jp/rss/2.0/news_bursts.xml"),
     ("日経 XTECH",        "https://xtech.nikkei.com/rss/index.rdf"),
+    ("XenoSpectrum",     "https://xenospectrum.com/feed/"),
 ]
 
 AI_KEYWORDS = [
